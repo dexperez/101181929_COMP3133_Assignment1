@@ -23,6 +23,11 @@ const typeDefs = gql`
     password: String!
   }
 
+  input LoginUser {
+    username: String!
+    password: String!
+  }
+
   input EmployeeInput {
     first_name: String!
     last_name: String!
@@ -42,7 +47,7 @@ const typeDefs = gql`
 
   type Mutation {
     signupUser(input: UserInput!): User
-    loginUser(input: UserInput!): User
+    loginUser(input: LoginUser!): User
     logoutUser(input: UserInput!): User
     deleteUser(id: ID!): User
     createEmployee(input: EmployeeInput!): Employee
